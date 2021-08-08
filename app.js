@@ -4,14 +4,14 @@ just add the renameFolder on the desktop then you ready to go
 else if you need to rename in specific path, provide that path in pathName
 then you ready to go. */
 
-const foldName = "C:/Users/Vendetta/Desktop/renameFolder/"
+const pathName = "C:/Users/Vendetta/Desktop/renameFolder/"
 
-fs.readdir(foldName, (err, files) => {
+fs.readdir(pathName, (err, files) => {
   if (!err) {
     let counter = 1;
     files.forEach((file, index) => {
-      let newFileNm = foldName + newName(file);
-      fs.rename(foldName + file, newFileNm, (er) => {
+      let newFileNm = pathName + newName(file);
+      fs.rename(pathName + file, newFileNm, (er) => {
         if (!er) {
           console.log(counter + ' files renamed successful');
           counter++;
